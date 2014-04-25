@@ -8,7 +8,7 @@
  *
  * Usage example:
  *
- *  var chainedAction = new ChainedAction({
+ *  var chainedAction = new $.ChainedAction({
  *    action: [
  *      function () { ... }, // must return Deferred promise object
  *      function () { ... }, // must return Deferred promise object
@@ -21,14 +21,16 @@
  *  chainedAction.run();
  */
 
-window.ChainedAction = function (options) {
+;(function($, window, document, undefined) {
+	
+$.ChainedAction = function (options) {
 	this.opt = {
 		action: [],
 		chainComplete: function () {}
 	};
 	_.extend(this.opt, options);
 };
-window.ChainedAction.prototype = {
+$.ChainedAction.prototype = {
 	run: function () {
 		var action = this.opt.action;
 		if (typeof action != 'object' ||
@@ -44,3 +46,4 @@ window.ChainedAction.prototype = {
 	}
 };
 
+})(jQuery, this, this.document);
