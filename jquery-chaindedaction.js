@@ -28,7 +28,7 @@ $.ChainedAction = function (options) {
 		action: [],
 		chainComplete: function () {}
 	};
-	_.extend(this.opt, options);
+	$.extend(this.opt, options);
 };
 $.ChainedAction.prototype = {
 	run: function () {
@@ -42,7 +42,7 @@ $.ChainedAction.prototype = {
 		for (var i=1,l=action.length; i<l ; i++) {
 			chained = chained.then(action[i]);
 		}
-		chained.done(_.bind(this.opt.chainComplete, this));
+		chained.done($.proxy(this.opt.chainComplete, this));
 	}
 };
 
