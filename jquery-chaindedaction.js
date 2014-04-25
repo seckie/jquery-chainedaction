@@ -1,11 +1,12 @@
-/**
+/*!*
  * ChainedAction
  *
- * @author     Naoki Sekiguchi (RaNa gRam)
+ * @author     Naoki Sekiguchi
  * @url        https://github.com/seckie/jquery-chainedaction
  * @license    http://www.opensource.org/licenses/mit-license.html  MIT License
  * @requires   jQuery.js
- *
+ */
+/**
  * Usage example:
  *
  *  var chainedAction = new $.ChainedAction({
